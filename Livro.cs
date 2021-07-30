@@ -19,4 +19,21 @@ namespace ExemplosMongoDB
         public List<string> Assuntos { get; set; }
         
     }
+
+    public class ValoresLivro
+    {
+        public static Livro IncluiValoresLivro(string titulo, string autor, int ano, int paginas, string assuntos)
+        {
+            Livro livro = new Livro
+            {
+                Titulo = titulo,
+                Autor = autor,
+                Ano = ano,
+                Paginas = paginas,
+                Assuntos = assuntos.Split(',').ToList()
+            };
+            return livro;
+        }
+    }
+
 }
